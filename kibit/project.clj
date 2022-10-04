@@ -1,6 +1,6 @@
-(defproject jonase/kibit (clojure.string/trim-newline (slurp "../kibit-common/resources/jonase/kibit/VERSION"))
+(defproject bowyer/kibit (clojure.string/trim-newline (slurp "../kibit-common/resources/bowyer/kibit/VERSION"))
   :description "There's a function for that!"
-  :url "https://github.com/jonase/kibit"
+  :url "https://github.com/bowyer/kibit"
   :license {:name "Eclipse Public License - v 1.0"
             :url "http://www.eclipse.org/legal/epl-v10.html"
             :distribution :repo

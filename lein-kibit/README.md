@@ -9,6 +9,8 @@ When updating to a new Kibit version, make sure to update both the `project.clj`
 
 ## License
 
+Parts Copyright © 2022 Rachel Bowyer
+
 Copyright © 2012 Jonas Enlund
 
 Distributed under the Eclipse Public License, the same as Clojure.

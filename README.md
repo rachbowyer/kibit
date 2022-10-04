@@ -3,6 +3,12 @@
 
 # kibit
 
+
+Modified version of the Clojure code analyser.
+
+
+
+
 *There's a function for that!*
 
 `kibit` is a static code analyzer for Clojure, ClojureScript, [cljx](https://github.com/lynaghk/cljx)
@@ -224,6 +230,8 @@ Thanks to all who have [contributed](https://github.com/jonase/kibit/graphs/cont
 * Leiningen project.clj setting for a directory of rules to include
 
 ## License
+
+Parts Copyright © 2022 Rachel Bowyer
 
 Copyright © 2012 Jonas Enlund
 
