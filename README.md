@@ -4,7 +4,26 @@
 # kibit
 
 
-Modified version of the Clojure code analyser.
+Modified version of the Clojure code analyser to match the code style used at [Previse](https://previ.se/)
+
+
+## Rules removed
+
+* Threaded macros are allowed for just two functions, but not one function
+* Rule that instant pay does not like  
+(So it suggests apply str with str/join - however I do actually agree with this suggestion - so going to leave it as)
+
+
+
+## Rules added
+
+* `prn`, `println`, `print`, `pp/pprint` - suggestion to use `log/info` - DONE
+* Are namespaces sorted?
+* Has partial been used? - DONE 
+* Use of constant modifier ^:const
+* Filter not, not= => remove
+* Map filter => keep 
+* into [] => vec
 
 
 
