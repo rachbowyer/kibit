@@ -19,9 +19,11 @@
   [prn log/info]
   [pprint log/info]
 
-  ;; partial
-  [(partial ?fn . ?arg)
-   #(?fn ?arg %)]
+  ;; Use of partial
+  (let [fun (logic/lvar)
+        args (logic/lvar)]
+    [(fn [expr] (logic/== expr (logic/llist 'partial fun args)))
+      (fn [expr] (logic/== expr `#(~fun %)))])
 
   ;; clojure.string
   [(apply str (interpose ?x ?y)) (clojure.string/join ?x ?y)]
@@ -51,8 +53,17 @@
     [(fn [expr]
        (logic/all
         (logic/conde
-         [(logic/== expr (list 'fn args (logic/llist fun args)))]
-         [(logic/== expr (list 'fn* args (logic/llist fun args)))])
+          ;; (fn [a1 a2 ...] (fun a1 a2 ...)
+          ;; last argument is tail in logic/llist
+          [(logic/== expr (list 'fn args (logic/llist fun args)))]
+
+          ;; #(fun %) - This syntax sugar for fn* etc
+          [(logic/== expr (list 'fn* args (logic/llist fun args)))])
+
+        ;; fun is either a keyword or a symbol which does not have
+        ;; / or . -- so excludes Java functions
+        ;; So excludes some actual issues but conservative to avoid
+        ;; false positives presumably
         (logic/pred fun #(or (keyword? %)
                              (and (symbol? %)
                                   (not-any? #{\/ \.} (str %)))))))
