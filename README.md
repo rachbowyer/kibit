@@ -1,4 +1,4 @@
-** A customised version of Kibit that disables some rules and adds some new rules. See the `previse` branch for more details. **
+**A customised version of Kibit that disables some rules and adds some new rules. See the `previse` branch for more details.**
 
 
 
