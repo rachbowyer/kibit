@@ -1,7 +1,13 @@
+** A customised version of Kibit that disables some rules and adds some new rules. See the `previse` branch for more details.**
+
+
+
+ 
 [![Build Status](https://travis-ci.org/jonase/kibit.svg?branch=master)](https://travis-ci.org/jonase/kibit)
 [![Dependencies Status](http://jarkeeper.com/jonase/kibit/status.svg)](http://jarkeeper.com/jonase/kibit)
 
 # kibit
+
 
 *There's a function for that!*
 
